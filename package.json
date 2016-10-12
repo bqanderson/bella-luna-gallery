@@ -1,0 +1,44 @@
+{
+  "name": "bella-luna-gallery",
+  "version": "1.0.0",
+  "description": "Bella Luna Studios Admin App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Brian Q Anderson",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-animate": "^1.5.8",
+    "angular-bootstrap-calendar": "^0.22.0",
+    "angular-moment": "^1.0.0-beta.6",
+    "angular-momentjs": "^0.2.2",
+    "angular-route": "^1.5.8",
+    "angular-ui-bootstrap": "^2.0.1",
+    "bcrypt": "^0.8.7",
+    "body-parser": "^1.15.2",
+    "bootstrap": "^3.3.7",
+    "dotenv": "^2.0.0",
+    "express": "^4.14.0",
+    "express-session": "^1.14.0",
+    "grunt": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "jquery": "^3.1.1",
+    "jquery-migrate": "^3.0.0",
+    "moment": "^2.14.1",
+    "mongoose": "^4.5.7",
+    "nodemailer": "^2.6.0",
+    "nodemailer-smtp-transport": "^2.7.2",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "requirejs": "^2.2.0",
+    "ui-bootstrap": "^0.1.2"
+  },
+  "engines": {
+    "node": "6.5.0"
+  }
+}

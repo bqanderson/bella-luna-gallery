@@ -1,0 +1,96 @@
+<nav class="nav-primary" itemscope itemtype="http://schema.org/SiteNavigationElement">
+    <div class="wrap">
+        <ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary">
+            <li id="menu-item-34" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-34"><a href="/admin/adminEvents">Events</a></li>
+            <li id="menu-item-51" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51"><a href="/admin/guestList">Guest List</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Main Email Page Body -->
+<!-- <div class="container"> -->
+
+  <!-- Guest Email List -->
+  <div class="col-sm-7">
+    <h2 class="text-center oldStandard">Guest Email List</h2>
+
+      <table class="table table-condensed tabel-bordered table-hover">
+        <thead>
+          <tr>
+            <th class="col-sm-3">First Name</th>
+            <th class="col-sm-3">Last Name</th>
+            <th class="col-sm-5">Email Address</th>
+            <th class="col-sm-1">Send</th>
+          </tr>
+        </thead>
+        <tbody ng-repeat="guest in glc.guests track by $index" ng-class-odd="'trOdd'" ng-class-even="'trEven'">
+          <tr>
+            <td ng-click="glc.showEditor($index)">
+              <p class="table-info">{{guest.firstName}}</p>
+            </td>
+            <td ng-click="glc.showEditor($index)">
+              <p class="table-info">{{guest.lastName}}</p>
+            </td>
+            <td ng-click="glc.showEditor($index)">
+              <p class="table-info">{{guest.email}}</p>
+            </td>
+            <td class="center">
+                <input type="checkbox" ng-model="guest.emailTo" />
+            </td>
+          </tr>
+          <tr ng-show="glc.guests[$index].clicked">
+            <td class="col-sm-3">
+              <input type="text" class="form-control input-sm" placeholder="Update First Name" ng-model="glc.updateFirstName" />
+            </td>
+            <td class="col-sm-3">
+              <input type="text" class="form-control input-sm" placeholder="Update Last Name" ng-model="glc.updateLastName" />
+            </td>
+            <td class="col-sm-5">
+              <input type="email" class="form-control input-sm" placeholder="Update Email" ng-model="glc.updateEmail" />
+            </td>
+            <td class="col-sm-1 center">
+              <span class="glyphicon glyphicon-ok text-success" ng-click="glc.updateGuests($index)"></span>
+              <span class="glyphicon glyphicon-remove text-danger" ng-click="glc.deleteGuest($index)"></span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <form class="form-inline">
+        <div class="form-group guest-list">
+          <input type="text" class="form-control" placeholder="First Name" ng-model="glc.firstName" />
+        </div>
+        <div class="form-group guest-list">
+          <input type="text" class="form-control" placeholder="Last Name" ng-model="glc.lastName" />
+        </div>
+        <div class="form-group guest-list">
+          <input type="email" class="form-control" placeholder="Email Address" ng-model="glc.email" />
+        </div>
+        <div class="form-group">
+          <button class="btn btn-main" ng-click="glc.addGuest(showGuest())">Add Guest</button>
+        </div>
+      </form>
+  </div>
+
+  <!-- Email Message -->
+  <div class="col-sm-5">
+    <h2 class="text-center oldStandard">Email Message</h2>
+    <div class="form-group">
+      <form>
+        <div class="form-group">
+          <input type="text" class="form-control" ng-model="glc.emailSubject" placeholder="Email Subject" />
+        </div>
+        <div class="form-group">
+          <textarea class="form-control" rows="16" ng-model="glc.emailMessage" placeholder="Email Message"></textarea>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" ng-model="glc.eventLink" placeholder="Event Link (optional)" />
+        </div>
+        <div class="form-group center">
+          <button class="btn btn-main" ng-click="glc.sendEmail()">Send Email</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+<!-- </div> -->

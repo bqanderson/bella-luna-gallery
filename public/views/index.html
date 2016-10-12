@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html ng-app="publicApp">
+
+<head itemscope itemtype="http://schema.org/WebSite">
+  <meta charset="UTF-8" />
+  <title>Bella Luna Studios – At the Wolf House - NE Minneapolis</title>
+
+  <!-- Wordpress code and styles -->
+  <meta name="description" content="At the Wolf House - NE Minneapolis" />
+  <meta name="robots" content="noodp,noydir" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="alternate" type="application/rss+xml" title="Bella Luna Studios &raquo; Feed" href="http://wolfhousempls.com/feed/" />
+  <link rel="alternate" type="application/rss+xml" title="Bella Luna Studios &raquo; Comments Feed" href="http://wolfhousempls.com/comments/feed/" />
+  <link rel="stylesheet" id="swank-theme-css" href="../vendor/wp-content/swank-theme.css" type="text/css" media="all" />
+  <link rel="stylesheet" id="contact-form-7-css" href="../vendor/wp-content/contact-form-7.css" type='text/css' media='all' />
+  <link rel='stylesheet' id='slider_styles-css' href="../vendor/wp-content/slider_style.css" type='text/css' media='all' />
+  <link rel="Shortcut Icon" href="http://wolfhousempls.com/wp-content/themes/swank/images/favicon.ico" type="image/x-icon" />
+  <meta itemprop="name" content="Bella Luna Studios" />
+  <meta itemprop="url" content="http://wolfhousempls.com/" />
+
+  <!-- Fonts and CSS Stylesheets -->
+  <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT|Roboto:300,400,700" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../vendor/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="../vendor/angular-bootstrap-calendar/dist/css/angular-bootstrap-calendar.min.css" />
+  <link rel="stylesheet" type="text/css" href="../styles/stylesheet.css" />
+
+  <!-- Vendor Scrtipts -->
+  <script src="vendor/angular/angular.min.js"></script>
+  <script src="vendor/angular-route/angular-route.min.js"></script>
+  <script src="vendor/moment/min/moment.min.js" charset="utf-8"></script>
+  <script src="vendor/angular-moment/angular-moment.min.js" charset="utf-8"></script>
+  <script src="vendor/moment/min/moment-with-locales.min.js" charset="utf-8"></script>
+  <script src="vendor/angular-bootstrap-calendar/dist/js/angular-bootstrap-calendar.js"></script>
+  <script src="vendor/angular-bootstrap-calendar/dist/js/angular-bootstrap-calendar-tpls.min.js"></script>
+  <script src="vendor/angular-ui-bootstrap/dist/ui-bootstrap.js" charset="utf-8"></script>
+  <script src="vendor/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js" charset="utf-8"></script>
+  <script src="vendor/angular-animate/angular-animate.min.js" charset="utf-8"></script>
+  <script src="vendor/jquery/dist/jquery.min.js" charset="utf-8"></script>
+  <script src="vendor/jquery-migrate/dist/jquery-migrate.min.js" charset="utf-8"></script>
+  <script src="vendor/wp-content/jquery.form.min.js" charset="utf-8"></script>
+  <script src="vendor/wp-content/contact-form-7.js" charset="utf-8"></script>
+  <script src="vendor/wp-content/responsive-menu.js" charset="utf-8"></script>
+  <script src="vendor/wp-content/jquery.flexslider.js" charset="utf-8"></script>
+  <script src="vendor/wp-content/wp-embed.min.js" charset="utf-8"></script>
+  <script src="vendor/wp-content/TweenMax.min.js" charset="utf-8"></script>
+
+  <!-- Custom Built Scripts -->
+  <script src="scripts/publicApp.module.js"></script>
+  <script src="scripts/publicApp.config.js"></script>
+  <script src="scripts/PublicGalleryController.js"></script>
+  <script src="scripts/PublicEventsController.js" charset="utf-8"></script>
+  <script src="scripts/ViewEventModalController.js" charset="utf-8"></script>
+  <script src="scripts/SuggestEventController.js" charset="utf-8"></script>
+  <script src="scripts/RequestAirContorller.js" charset="utf-8"></script>
+  <script src="scripts/publicModalHelper.js" charset="utf-8"></script>
+  <script src="scripts/calendarConfig.js" charset="utf-8"></script>
+  <script src="scripts/PubDataService.js"></script>
+  <base href="/" />
+</head>
+
+<body class="home blog header-full-width full-width-content" itemscope itemtype="http://schema.org/WebPage">
+  <div class="site-container">
+    <!-- <div class="top-bar">
+        <div class="wrap"></div>
+    </div>
+    <header class="site-header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="wrap">
+            <div class="title-area">
+                <h1 class="site-title" itemprop="headline"><a href="/">Bella Luna Studios</a></h1>
+                <h2 class="site-description" itemprop="description">At the Wolf House - NE Minneapolis</h2></div>
+        </div>
+    </header>
+
+    <nav class="nav-primary" itemscope itemtype="http://schema.org/SiteNavigationElement">
+      <div class="wrap">
+        <ul id="menu-main-menu" class="menu genesis-nav-menu menu-primary navList">
+          <li id="menu-item-44" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-44"><a href="/about">About</a></li>
+          <li id="menu-item-34" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-34"><a href="/events">Events</a></li>
+          <li id="menu-item-51" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51"><a href="/artists">Visiting Artists</a></li>
+          <li id="menu-item-63" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-63"><a href="/press">Press</a></li>
+          <li id="menu-item-131" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-131"><a href="/gallery">Gallery</a></li>
+          <li id="menu-item-29" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-29"><a href="/guestbook">Guestbook</a></li>
+          <li id="menu-item-16" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16"><a href="/contact">Contact</a></li>
+          <li id="menu-item-57" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-57"><a href="https://www.facebook.com/bellalunastudioswolfhouseNE">Facebook</a></li>
+        </ul>
+      </div>
+    </nav> -->
+
+    <div ng-view></div>
+
+    <!-- <footer class="site-footer" itemscope itemtype="http://schema.org/WPFooter">
+      <div class="wrap">
+          <p class="footer">Copyright &#x000A9;&nbsp;2016 <a href="http://wolfhousempls.com//">Bella Luna Studios</a></p>
+      </div>
+    </footer> -->
+  </div>
+
+  <!-- <script type='text/javascript'>
+      jQuery(document).ready(function($) {
+          $(".flexslider").flexslider({
+            controlsContainer: "#genesis-responsive-slider",
+            animation: "fade",
+            directionNav: 0,
+            controlNav: 0,
+            animationDuration: 2500,
+            slideshowSpeed: 5000
+          });
+      });
+  </script>
+
+  <script type='text/javascript'>
+      /* <![CDATA[ */
+      var _wpcf7 = {
+          "loaderUrl": "http:\/\/wolfhousempls.com\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif",
+          "recaptchaEmpty": "Please verify that you are not a robot.",
+          "sending": "Sending ..."
+      };
+      /* ]]> */
+  </script> -->
+
+</body>
+
+</html>

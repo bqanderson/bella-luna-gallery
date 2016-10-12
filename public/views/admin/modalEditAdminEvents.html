@@ -1,0 +1,112 @@
+<div class="container-fluid modal-view">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{eemc.title}}</h3>
+    </div>
+    <div class="panel-body">
+      <form>
+      <div class="col-md-12 form-group">
+        <input type="text" class="form-control" ng-model="eemc.title" placeholder="Event Title">
+      </div>
+      <div class="col-md-12 form-group">
+        <textarea
+          class="form-control"
+          rows="5"
+          ng-model="eemc.description"
+          placeholder="Event Description">
+        </textarea>
+      </div>
+      <div class="form-group">
+        <div class="col-md-6">
+          <p class="input-group">
+            <input type="text"
+              class="form-control"
+              uib-datepicker-popup="shortDate"
+              ng-model="eemc.startsAt"
+              is-open="eemc.popup1.opened"
+              datepicker-options="eemc.dateOptions"
+              ng-required="true"
+              close-text="Close"
+              alt-input-formats="eemc.altInputFormats"
+              placeholder="Start Date" />
+            <span class="input-group-btn">
+              <button type="button"
+                class="btn btn-default"
+                ng-click="eemc.open1()">
+                <i class="glyphicon glyphicon-calendar"></i>
+              </button>
+            </span>
+          </p>
+        </div>
+        <div class="col-md-6">
+          <p class="input-group">
+            <input type="text"
+              class="form-control"
+              uib-datepicker-popup="shortDate"
+              ng-model="eemc.endsAt"
+              is-open="eemc.popup2.opened"
+              datepicker-options="eemc.dateOptions"
+              ng-required="true"
+              close-text="Close"
+              alt-input-formats="eemc.altInputFormats"
+              placeholder="End Date" />
+            <span class="input-group-btn">
+              <button type="button"
+                class="btn btn-default"
+                ng-click="eemc.open2()">
+                <i class="glyphicon glyphicon-calendar"></i>
+              </button>
+            </span>
+          </p>
+        </div>
+        <div
+          uib-timepicker
+          ng-model="eemc.startsAt"
+          hour-step="1"
+          minute-step="15"
+          show-meridian="true"
+          class="col-md-6">
+        </div>
+        <div
+          uib-timepicker
+          ng-model="eemc.endsAt"
+          hour-step="1"
+          minute-step="15"
+          show-meridian="true"
+          class="col-md-6">
+        </div>
+        <div class="col-md-12 form-group">
+          <input type="text" class="form-control" ng-model="eemc.tixLink" placeholder="Tickets Sales Link">
+        </div>
+
+        <!-- <div class="col-md-12 checkbox">
+          <h3 class="panel-title">Publish Event To:</h3><br />
+        <label class="checkbox-inline">
+          <input type="checkbox" ng-model="eemc.pubToBella" /> Bella Luna Studios
+        </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" ng-model="eemc.pubToFacebook" /> Facebook
+        </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" ng-model="eemc.pubToAnnette" /> www.annetteschiebout.com
+        </label>
+        </div> -->
+
+        <div class="col-md-12 form-group">
+          <!-- <h3 class="panel-title">Select Event Type</h3> -->
+          <select class="form-control squarecorners" ng-model="eemc.eventType">
+            <option value="" disabled selected hidden class="placeholder">Please Choose Event Type...</option>
+            <option value="public">Public Event</option>
+            <option value="private">Private Event</option>
+            <option value="artInRes">Artist in Residence</option>
+          </select>
+        </div>
+
+        <div class="center">
+          <button class="btn btn-main" ng-click="$close(eemc.updateAdminEvent())">Update Event</button>
+        </div>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
