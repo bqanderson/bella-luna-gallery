@@ -4,7 +4,9 @@ angular.module('publicApp').config(function($routeProvider, $locationProvider){
   $routeProvider
 
   .when('/', {
-    templateUrl: 'views/slider.html'
+    templateUrl: 'views/gallery.html',
+    controller: 'PublicGalleryController',
+    controllerAs: 'pgc'
   })
   .when('/about', {
     templateUrl: 'views/about.html'
